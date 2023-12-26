@@ -1,4 +1,4 @@
-void main(List<String> args) {
+void main() {
   final customerMouse = Mouses.logitech;
 
   print(customerMouse.index);
@@ -7,6 +7,13 @@ void main(List<String> args) {
   if (customerMouse.name == 'logitech') {}
 
   if (customerMouse == Mouses.logitech) {}
+
+  if (customerMouse.isCheckMouse('logitech')) {
+    print('my mouse is : logitech');
+  } else {
+    print('my mouse is not : logitech');
+  }
+  ;
 }
 
 enum Mouses {
@@ -16,4 +23,10 @@ enum Mouses {
   a4tech,
   razer,
   steelseries,
+}
+
+extension MouseSelectedExtension on Mouses {
+  bool isCheckMouse(String name) {
+    return this.name == name;
+  }
 }
