@@ -1,4 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'model/product_config_model.dart';
+
 void main() {
   // final newProduct = Product.money;
 
@@ -8,6 +10,8 @@ void main() {
   final user1 = User('user 1 name', 'user1 product');
   final newProduct = Product(user1.product);
   final newProduct2 = Product.fromUser(user1);
+
+  ProductConfig.instance.apiKey;
 }
 
 void calculateNewMoney(int money) {
